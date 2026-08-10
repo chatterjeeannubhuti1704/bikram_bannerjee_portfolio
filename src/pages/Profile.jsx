@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
+import profileImage from "../assests/b.png";
 
 export default function Profile() {
   const tags = [
@@ -26,7 +27,7 @@ export default function Profile() {
     <div>
       {/* HERO */}
       <section
-        className="relative min-h-[70vh] overflow-hidden bg-[#07111d]"
+        className="relative min-h-[90vh] overflow-hidden bg-[#07111d] px-6"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1920&auto=format&fit=crop')",
@@ -35,10 +36,10 @@ export default function Profile() {
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-[#07111d]/80" />
+        <div className="absolute inset-0 bg-[#07111d]/90" />
 
         {/* Content */}
-        <div className="relative z-10 mx-auto flex min-h-[70vh] max-w-7xl items-center px-6">
+        <div className="relative z-10 mx-auto flex min-h-[90vh] max-w-7xl items-center px-6">
 
           <div className="max-w-3xl">
 
@@ -100,7 +101,7 @@ export default function Profile() {
               <div className="relative overflow-hidden rounded-3xl border border-white/10">
 
                 <img
-                  src="../assests/b.png"
+                  src={profileImage}
                   alt="Bikram Banerjee"
                   className="h-[640px] w-full object-cover"
                 />
@@ -170,7 +171,7 @@ export default function Profile() {
                 </span>
               </div>
 
-              <div className="space-y-8 text-lg leading-9 text-slate-300">
+              <div className="space-y-8 text-md leading-9 text-slate-300">
 
                 <p>
                   I am a senior product leader with over <strong className="text-white">25 years</strong> of
@@ -219,7 +220,7 @@ export default function Profile() {
       {/* LEADERSHIP PHILOSOPHY */}
       <section className="relative bg-[#07111d] py-24 overflow-hidden">
 
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
 
           {/* Heading */}
 
@@ -252,7 +253,7 @@ export default function Profile() {
                 Outcome-Oriented
               </h3>
 
-              <p className="mt-5 text-lg leading-8 text-slate-400">
+              <p className="mt-5 text-md text-[#94a3b8]">
                 Every initiative starts with a clear definition of
                 success. I work backwards from measurable outcomes,
                 ensuring alignment between strategy, execution, and
@@ -273,7 +274,7 @@ export default function Profile() {
                 Stakeholder Alignment
               </h3>
 
-              <p className="mt-5 text-lg leading-8 text-slate-400">
+              <p className="mt-5 text-md text-[#94a3b8]">
                 Complex transformations require executive sponsorship,
                 cross-functional collaboration, and clear governance.
                 I build coalitions that can execute through ambiguity.
@@ -293,7 +294,7 @@ export default function Profile() {
                 Disciplined Execution
               </h3>
 
-              <p className="mt-5 text-lg leading-8 text-slate-400">
+              <p className="mt-5 text-md text-[#94a3b8]">
                 Strategy without execution is noise. I establish
                 governance, OKRs, and accountability frameworks that
                 turn ambitious plans into measurable outcomes.
@@ -313,7 +314,7 @@ export default function Profile() {
                 Innovation with Guardrails
               </h3>
 
-              <p className="mt-5 text-lg leading-8 text-slate-400">
+              <p className="mt-5 text-md text-[#94a3b8]">
                 In regulated environments, innovation must be
                 responsible. I balance speed with compliance, building
                 platforms that scale safely while maintaining trust.
