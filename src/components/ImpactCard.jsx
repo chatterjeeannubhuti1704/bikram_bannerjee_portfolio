@@ -1,186 +1,187 @@
-import { Brain, CheckCircle2 } from "lucide-react";
+import React from "react";
+import {
+  Zap,
+  TrendingUp,
+  Layers3,
+  CreditCard,
+  Globe2,
+  CheckCircle2,
+} from "lucide-react";
 
-export default function ImpactCard() {
+const icons = {
+  "AI TRANSFORMATION": Zap,
+  "GROWTH STRATEGY": TrendingUp,
+  "PROGRAMME DELIVERY": Layers3,
+  "PAYMENTS INNOVATION": CreditCard,
+  "GLOBAL EXPANSION": Globe2,
+};
+
+export default function ImpactCard({
+  category,
+  title,
+  image,
+  description,
+  challenge = [],
+  approach = [],
+  outcomes = [],
+}) {
+  const Icon = icons[category] || Zap;
+
   return (
-    <article className="overflow-hidden rounded-3xl border border-white/10 bg-[#141A25]">
+    <article className="group overflow-hidden rounded-xl border border-slate-700/70 bg-[#111823] shadow-xl">
 
-      {/* ================= Banner ================= */}
+      {/* ================= IMAGE ================= */}
 
-      <div
-        className="relative h-64 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.45)), url('/images/impact-ai.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-[#141A25] via-transparent to-transparent" />
+      <div className="relative h-[300px] overflow-hidden">
 
-        <div className="absolute bottom-8 left-8 right-8 flex items-end gap-5">
+        <img
+          src={image}
+          alt={title}
+          className="
+            absolute inset-0
+            h-full w-full
+            object-cover
+            transition-transform duration-700 ease-out
+            group-hover:scale-105
+          "
+        />
 
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/20 bg-white/10 backdrop-blur">
-            <Brain size={30} className="text-white" />
-          </div>
+        {/* Image overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111823] via-[#111823]/35 to-transparent" />
 
-          <div>
+        {/* Header content */}
+        <div className="absolute bottom-0 left-0 right-0 p-7">
 
-            <span className="text-sm uppercase tracking-widest text-[#CBB38A]">
-              AI Transformation
-            </span>
+          <div className="flex items-center gap-4">
 
-            <h2 className="mt-2 text-4xl font-bold text-white">
-              AI-enabled Document Operations Transformation
-            </h2>
+            <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/30 bg-slate-500/60 backdrop-blur-sm">
+              <Icon
+                size={21}
+                strokeWidth={1.8}
+                className="text-white"
+              />
+            </div>
+
+            <div>
+              <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.12em] text-[#35E3D1]">
+                {category}
+              </p>
+
+              <h2 className="text-xl font-bold text-white">
+                {title}
+              </h2>
+            </div>
 
           </div>
 
         </div>
       </div>
 
-      {/* ================= Content ================= */}
+      {/* ================= CONTENT ================= */}
 
-      <div className="p-10">
+      <div className="px-7 py-7 lg:px-8">
 
-        <p className="text-xl leading-9 text-slate-200">
-          Large-scale document processing operations with high manual effort,
-          inconsistent quality outcomes, and growing operational risk in a
-          regulated financial services environment.
+        {/* Description */}
+
+        <p className="max-w-5xl text-[15px] leading-7 text-slate-300">
+          {description}
         </p>
 
-        {/* Divider */}
+        {/* Challenge / Approach */}
 
-        <div className="my-10 h-px bg-white/10" />
+        <div className="mt-7 grid grid-cols-1 gap-8 lg:grid-cols-2">
 
-        {/* Challenge + Approach */}
-
-        <div className="grid gap-14 md:grid-cols-2">
-
-          {/* Left */}
+          {/* Challenge */}
 
           <div>
-
-            <p className="mb-6 uppercase tracking-widest text-sm text-slate-400">
+            <h3 className="mb-4 text-xs font-medium uppercase tracking-[0.12em] text-slate-500">
               Challenge
-            </p>
+            </h3>
 
-            <ul className="space-y-5">
-
-              <li className="flex gap-4">
-                <span className="mt-2 h-2 w-2 rounded-full bg-red-400" />
-                <span className="text-lg text-slate-300">
-                  High volume of manual document review and processing
-                </span>
-              </li>
-
-              <li className="flex gap-4">
-                <span className="mt-2 h-2 w-2 rounded-full bg-red-400" />
-                <span className="text-lg text-slate-300">
-                  Inconsistent quality and compliance outcomes
-                </span>
-              </li>
-
-              <li className="flex gap-4">
-                <span className="mt-2 h-2 w-2 rounded-full bg-red-400" />
-                <span className="text-lg text-slate-300">
-                  Limited scalability and rising operational costs
-                </span>
-              </li>
-
-              <li className="flex gap-4">
-                <span className="mt-2 h-2 w-2 rounded-full bg-red-400" />
-                <span className="text-lg text-slate-300">
-                  Risk exposure from human error
-                </span>
-              </li>
-
+            <ul className="space-y-3">
+              {challenge.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex gap-3 text-sm leading-6 text-slate-300"
+                >
+                  <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff6b78]" />
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
-
           </div>
 
-          {/* Right */}
+          {/* Approach */}
 
           <div>
-
-            <p className="mb-6 uppercase tracking-widest text-sm text-slate-400">
+            <h3 className="mb-4 text-xs font-medium uppercase tracking-[0.12em] text-slate-500">
               Approach
-            </p>
+            </h3>
 
-            <ul className="space-y-5">
+            <ul className="space-y-3">
+              {approach.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex gap-3 text-sm leading-6 text-slate-300"
+                >
+                  <CheckCircle2
+                    size={15}
+                    strokeWidth={1.8}
+                    className="mt-[5px] shrink-0 text-[#35E3D1]"
+                  />
 
-              <li className="flex gap-4">
-                <CheckCircle2 className="mt-1 text-[#35E3D1]" size={20} />
-                <span className="text-lg text-slate-300">
-                  Designed AI-enabled workflow with human-in-the-loop controls
-                </span>
-              </li>
-
-              <li className="flex gap-4">
-                <CheckCircle2 className="mt-1 text-[#35E3D1]" size={20} />
-                <span className="text-lg text-slate-300">
-                  Built governance framework for responsible AI adoption
-                </span>
-              </li>
-
-              <li className="flex gap-4">
-                <CheckCircle2 className="mt-1 text-[#35E3D1]" size={20} />
-                <span className="text-lg text-slate-300">
-                  Aligned with policy and compliance requirements
-                </span>
-              </li>
-
-              <li className="flex gap-4">
-                <CheckCircle2 className="mt-1 text-[#35E3D1]" size={20} />
-                <span className="text-lg text-slate-300">
-                  Established rollout governance and change management
-                </span>
-              </li>
-
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
-
           </div>
 
         </div>
 
-        {/* Divider */}
+        {/* ================= DIVIDER ================= */}
 
-        <div className="my-10 h-px bg-white/10" />
+        <div className="my-7 h-px bg-slate-700/70" />
 
-        {/* Outcomes */}
+        {/* ================= OUTCOMES ================= */}
 
-        <p className="mb-6 uppercase tracking-widest text-sm text-slate-400">
-          Outcomes
-        </p>
+        <div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+          <h3 className="mb-4 text-xs font-medium uppercase tracking-[0.12em] text-slate-500">
+            Outcomes
+          </h3>
 
-          <div className="rounded-2xl bg-white/5 py-8 text-center">
-            <h3 className="text-4xl font-bold text-white">~28%</h3>
-            <p className="mt-3 text-slate-400">
-              Productivity improvement
-            </p>
-          </div>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
 
-          <div className="rounded-2xl bg-white/5 py-8 text-center">
-            <h3 className="text-4xl font-bold text-white">
-              Improved
-            </h3>
-            <p className="mt-3 text-slate-400">
-              Throughput & quality
-            </p>
-          </div>
+            {outcomes.map((outcome, index) => (
+              <div
+                key={index}
+                className="
+                  rounded-xl
+                  border border-slate-700/40
+                  bg-[#1b222d]
+                  px-5 py-5
+                  text-center
+                  transition-all duration-300
+                  group-hover:border-slate-600
+                "
+              >
 
-          <div className="rounded-2xl bg-white/5 py-8 text-center">
-            <h3 className="text-4xl font-bold text-white">
-              Stronger
-            </h3>
-            <p className="mt-3 text-slate-400">
-              Auditability
-            </p>
+                <p className="text-xl font-bold text-white">
+                  {outcome.value}
+                </p>
+
+                <p className="mt-1 text-xs text-slate-500">
+                  {outcome.label}
+                </p>
+
+              </div>
+            ))}
+
           </div>
 
         </div>
 
       </div>
-
     </article>
   );
 }

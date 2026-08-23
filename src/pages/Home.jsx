@@ -24,6 +24,10 @@ import {
   BarChart3,
   //Linkedin,
 } from "lucide-react";
+
+import profileImage from "../assests/b.png";
+
+import banner from "../assests/ex.jpeg";
 export default function Home() {
   const tags = [
     "AI / Document Ops",
@@ -200,7 +204,7 @@ export default function Home() {
         className="relative min-h-screen overflow-hidden bg-[#07111d]"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1920&auto=format&fit=crop')",
+            `url(${banner})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -292,8 +296,8 @@ export default function Home() {
             <div className="flex gap-5 border-b border-white/20 p-6">
 
               <img
-                src="assests/b.png"
-                alt=""
+                src={profileImage}
+                alt="Bikram Banerjee"
                 className="h-20 w-20 rounded-2xl object-cover"
               />
 

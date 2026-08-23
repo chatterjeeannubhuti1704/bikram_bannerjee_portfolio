@@ -1,6 +1,7 @@
 import React from "react";
 import experience from "../assests/ex.jpeg";
-
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 const experiences = [
   {
     title: "Vice President, Product – AI / KYC / AML / Document Operations",
@@ -375,6 +376,37 @@ export default function Experience() {
 
         </div>
       </div>
+      
+          {/* CTA */}
+
+          <div className="mt-24 border-t border-white/10 pt-20 text-center">
+
+            <h2 className="text-4xl font-bold text-white">
+              Interested in discussing opportunities?
+            </h2>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-5">
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 rounded-xl bg-cyan-500 px-8 py-4 font-semibold text-white transition hover:bg-cyan-400"
+              >
+                Get in touch
+                <ArrowRight size={18} />
+              </Link>
+
+              <Link
+                to="/experience"
+                className="rounded-xl border border-white/20 px-8 py-4 font-semibold text-white transition hover:border-cyan-400"
+              >
+                View experience
+              </Link>
+
+            </div>
+
+          </div>
+
     </section>
+
   );
 }
