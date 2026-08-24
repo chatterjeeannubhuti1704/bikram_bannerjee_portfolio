@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Linkedin,
   MapPin,
   Download,
   MessageSquare,
@@ -105,13 +104,13 @@ export default function Contact() {
       {/* =========================================================
           CONTACT CONTENT
       ========================================================== */}
-      <section className="bg-[#070d18] px-4 py-12 sm:px-6 lg:py-16">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8 lg:flex-row lg:items-start">
+      <section className="">
+        <div className="mx-auto flex max-w-5xl flex-col gap-8 lg:flex-row lg:items-start ">
 
           {/* =====================================================
               FORM
           ====================================================== */}
-          <div className="w-full rounded-2xl border border-slate-700/70 bg-[#111824] p-6 shadow-[0_15px_50px_rgba(0,0,0,0.18)] sm:p-7 lg:w-1/2">
+          <div className="w-[60%] bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10 rounded-2xl p-6 md:p-8 ">
 
             {sent ? (
               <div className="flex min-h-[360px] flex-col items-center justify-center text-center">
@@ -291,15 +290,15 @@ export default function Contact() {
           {/* =====================================================
               RIGHT COLUMN
           ====================================================== */}
-          <div className="flex w-full flex-col gap-5 lg:w-[290px]">
+          <div className="flex w-[35%] flex-col gap-5 ">
 
             {/* LinkedIn */}
-            <div className="rounded-2xl border border-slate-700/70 bg-[#111824] p-5 transition hover:border-slate-600">
+            <div className="rounded-2xl border   p-5 transition hover:border-slate-600">
 
               <div className="flex items-center gap-4">
 
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/15 text-blue-400">
-                  <Linkedin size={19} />
+                  {/* <Linkedin size={19} /> */}
                 </div>
 
                 <div>
@@ -313,13 +312,10 @@ export default function Contact() {
                 </div>
 
               </div>
-
-              {/* Intentionally empty — link will be added later */}
-
             </div>
 
             {/* Location */}
-            <div className="rounded-2xl border border-slate-700/70 bg-[#111824] p-5">
+            <div className="rounded-2xl border   p-5">
 
               <div className="flex items-center gap-4">
 
@@ -342,7 +338,7 @@ export default function Contact() {
             </div>
 
             {/* Download CV */}
-            <div className="rounded-2xl border border-slate-700/70 bg-[#111824] p-5">
+            <div className="rounded-2xl border   p-5">
 
               <div className="flex items-center gap-4">
 

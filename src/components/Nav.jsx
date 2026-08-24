@@ -32,8 +32,9 @@ export default function Nav() {
 
       <header
         className={`
-          bg-ink border-r border-hairline z-30
-          w-[95%] max-w-7xl mx-auto
+          fixed top-0 left-0 right-0 z-50
+          bg-[#0a0f1a] 
+        
           flex justify-between object-center 
           transition-transform duration-300 lg:translate-x-0
           ${open ? 'translate-x-0' : '-translate-x-full'}
